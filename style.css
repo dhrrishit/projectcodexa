@@ -1,0 +1,224 @@
+/* Updated CSS */
+/* Reset some basic styles */
+body,
+h1,
+h2,
+label,
+input,
+textarea,
+button,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  padding: 20px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  background-color: #141414; /* Darker background for header */
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #a274bf;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+main {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h2 {
+  color: #a274bf;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ccc;
+  align-self: flex-start;
+}
+
+/* Add margin-top to password label */
+main label[for="password"] {
+  margin-top: 20px;
+}
+main label[for="confirmPassword"] {
+  margin-top: 10px;
+}
+/* Wrapper for label and textarea */
+.input-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Wrapper for textarea and clear button */
+.input-wrapper {
+  display: flex;
+  align-items: flex-start; /* align the items to top */
+  margin-bottom: 15px;
+  width: 100%;
+}
+.url-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.url-wrapper button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+.url-wrapper button:hover{
+  background-color: #777;
+}
+main input[type="password"],
+main input[type="text"],
+.input-wrapper textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+main input[type="password"]:focus,
+main input[type="text"]:focus,
+.input-wrapper textarea:focus {
+  border-color: #a274bf;
+  outline: none;
+}
+
+.input-wrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+  margin-bottom: 0;
+}
+
+main button {
+  display: inline-block;
+  width: auto;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #a274bf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+}
+
+main button:hover {
+  background-color: #855c9e;
+  box-shadow: 0 0 10px 3px #a274bf; /* Added glow effect on hover */
+}
+
+main input[type="text"][readonly] {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+main button[type="button"] {
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-left: 5px;
+  transition: background-color 0.3s ease;
+}
+
+main button[type="button"]:hover {
+  background-color: #777;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #333;
+  color: #888;
+  margin-top: auto;
+}
+
+#encryption-info {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Responsive Design (For Phones) */
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  main input[type="password"],
+  main input[type="text"],
+  .input-wrapper textarea,
+  main button {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  #encryption-info {
+    font-size: 14px;
+  }
+
+  main button[type="button"] {
+    padding: 5px;
+  }
+}
