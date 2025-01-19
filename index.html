@@ -1,86 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project CodeX-b</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Favicon link -->
-    <link rel="icon" type="image/png" href="logo.png">
-  </head>
-  <body>
-    <header>
-      <h1>Project CodeX-b</h1>
-    </header>
 
-    <main>
-      <div class="input-label-wrapper">
-        <label for="inputText">Text to Encrypt:</label>
-        <div class="input-wrapper">
-          <textarea
-            id="inputText"
-            rows="5"
-            placeholder="Enter your text here"
-          ></textarea
-          ><button type="button" id="clearInputText">Clear</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project CodeX-b</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon link -->
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+  <header>
+    <h1>Project CodeX-b</h1>
+  </header>
+
+  <main>
+    <div class="input-label-wrapper">
+      <label for="inputText">Text to Encrypt:</label>
+      <div class="input-wrapper">
+        <textarea id="inputText" rows="5" placeholder="Enter your text here"></textarea><button type="button"
+          id="clearInputText">Clear</button>
       </div>
-      <label for="password">Password:</label><br />
-      <input type="password" id="password" placeholder="Enter your password" /><br />
-      <label for="confirmPassword">Confirm Password:</label><br />
-      <input
-        type="password"
-        id="confirmPassword"
-        placeholder="Confirm your password"
-      /><br />
-      <button onclick="encrypt()">Encrypt</button><br />
-      <p id="encryption-info">
-        After encryption a link will be generated down below, use that link to
-        open a new tab and then put on the decryption password.
-      </p>
-      <label for="encryptedURL">Encrypted URL:</label><br />
-    <div class = "url-wrapper">
-      <button type="button" id="copyURL">Copy</button>
-      <input
-        type="text"
-        id="encryptedURL"
-        readonly
-        placeholder="Encrypted URL will appear here"
-      />
     </div>
-      <h2>Decrypt Your Text</h2>
-      <label for="decryptPassword">Enter Password to Decrypt</label><br />
-      <input
-        type="password"
-        id="decryptPassword"
-        placeholder="Enter password to decrypt"
-      /><br />
-      <button onclick="decrypt()">Decrypt</button><br />
-      <div class="input-label-wrapper">
-        <label for="decryptedText">Decrypted Text:</label>
-        <div class="input-wrapper">
-          <textarea
-            id="decryptedText"
-            rows="5"
-            readonly
-            placeholder="Decrypted text will appear here"
-          ></textarea
-          ><button type="button" id="clearDecryptedText">Clear</button>
-        </div>
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" placeholder="Enter your password" /><br />
+    <label for="confirmPassword">Confirm Password:</label><br />
+    <input type="password" id="confirmPassword" placeholder="Confirm your password" /><br />
+    <button onclick="encrypt()">Encrypt</button><br />
+    <p id="encryption-info">
+      After encryption, a link will be generated down below. Use that link to
+      open a new tab and then put on the decryption password.
+    </p>
+    <label for="encryptedURL">Encrypted URL:</label><br />
+    <div class="url-wrapper">
+      <button type="button" id="copyURL">Copy</button>
+      <input type="text" id="encryptedURL" readonly placeholder="Encrypted URL will appear here" />
+    </div>
+    <h2>Decrypt Your Text</h2>
+    <label for="decryptPassword">Enter Password to Decrypt</label><br />
+    <input type="password" id="decryptPassword" placeholder="Enter password to decrypt" /><br />
+    <button onclick="decrypt()">Decrypt</button><br />
+    <div class="input-label-wrapper">
+      <label for="decryptedText">Decrypted Text:</label>
+      <div class="input-wrapper">
+        <textarea id="decryptedText" rows="5" readonly placeholder="Decrypted text will appear here"></textarea><button
+          type="button" id="clearDecryptedText">Clear</button>
       </div>
-    </main>
-    <footer>
-      <p>
-        This visionary project, developed by Dhrrishit Deka, strives to
-        revolutionize the way we access text online by offering free, secure, and
-        uninterrupted content. Designed with user experience in mind, it
-        guarantees a platform free from intrusive ads and the threats of piracy,
-        fostering a safe and accessible digital environment for all.
-      </p>
-    </footer>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Project CodeX-b is a web application providing secure client-side text encryption and decryption via shareable
+      URLs made by Dhrrishit Deka. Users input text, set a password (min 8 characters), and the app encrypts the text
+      using AES with a PBKDF2-derived key and a unique salt. This process generates a URL containing the encrypted
+      message, which can be shared for decryption using the same password.
+    </p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
