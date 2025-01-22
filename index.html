@@ -4,59 +4,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project CodeX-b</title>
+  <title>CraftedCodeX | ProjectCodeX-B</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Favicon link -->
   <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1>Project CodeX-b</h1>
-  </header>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>ProjectCodeX-B</h1>
+      </div>
+      <p>A web application providing secure client-side text encryption and decryption via shareable URLs.</p>
+    </header>
 
-  <main>
-    <div class="input-label-wrapper">
-      <label for="inputText">Text to Encrypt:</label>
-      <div class="input-wrapper">
-        <textarea id="inputText" rows="5" placeholder="Enter your text here"></textarea><button type="button"
-          id="clearInputText">Clear</button>
-      </div>
-    </div>
-    <label for="password">Password:</label><br />
-    <input type="password" id="password" placeholder="Enter your password" /><br />
-    <label for="confirmPassword">Confirm Password:</label><br />
-    <input type="password" id="confirmPassword" placeholder="Confirm your password" /><br />
-    <button onclick="encrypt()">Encrypt</button><br />
-    <p id="encryption-info">
-      After encryption, a link will be generated down below. Use that link to
-      open a new tab and then put on the decryption password.
-    </p>
-    <label for="encryptedURL">Encrypted URL:</label><br />
-    <div class="url-wrapper">
-      <button type="button" id="copyURL">Copy</button>
-      <input type="text" id="encryptedURL" readonly placeholder="Encrypted URL will appear here" />
-    </div>
-    <h2>Decrypt Your Text</h2>
-    <label for="decryptPassword">Enter Password to Decrypt</label><br />
-    <input type="password" id="decryptPassword" placeholder="Enter password to decrypt" /><br />
-    <button onclick="decrypt()">Decrypt</button><br />
-    <div class="input-label-wrapper">
-      <label for="decryptedText">Decrypted Text:</label>
-      <div class="input-wrapper">
-        <textarea id="decryptedText" rows="5" readonly placeholder="Decrypted text will appear here"></textarea><button
-          type="button" id="clearDecryptedText">Clear</button>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>
-      Project CodeX-b is a web application providing secure client-side text encryption and decryption via shareable
-      URLs made by Dhrrishit Deka. Users input text, set a password (min 8 characters), and the app encrypts the text
-      using AES with a PBKDF2-derived key and a unique salt. This process generates a URL containing the encrypted
-      message, which can be shared for decryption using the same password.
-    </p>
-  </footer>
+    <main>
+      <section class="features-section">
+        <h2>Features</h2>
+          <ul>
+            <li><strong>Client-Side Encryption:</strong> Text is encrypted in the user's browser, ensuring that sensitive data never leaves the client unprotected.</li>
+            <li><strong>AES Encryption:</strong> Utilizes the robust Advanced Encryption Standard for high-security text protection.</li>
+            <li><strong>Password-Based Key Derivation Function (PBKDF2):</strong> Derives a strong and complex key for encryption using user-provided passwords.</li>
+            <li><strong>Unique Salt for Each Encryption:</strong> Enhances security by making attacks like rainbow tables ineffective.</li>
+             <li><strong>Shareable Encrypted URL:</strong> Generates a link containing the encrypted message for easy sharing.</li>
+            <li><strong>Password-Protected Decryption:</strong> Ensures that only users with the correct password can decrypt the text.</li>
+          </ul>
+      </section>
+        <section class="pros-section">
+            <h2>Why ProjectCodeX-B?</h2>
+            <ul>
+                <li><strong>High Security:</strong> Data encryption is performed entirely in the user's browser, mitigating the risk of interception.</li>
+                <li><strong>Ease of Use:</strong> A simple and intuitive user interface with clear labels and buttons.</li>
+                <li><strong>No Server Dependency:</strong> Since encryption is client-side, no sensitive data is stored or processed on external servers.</li>
+                 <li><strong>Portable Encryption:</strong> The encrypted URL can be easily shared without requiring additional files or software.</li>
+                <li><strong>Customizable Design:</strong> A sleek, responsive design using modern CSS practices ensures usability across devices.</li>
+                <li><strong>Educational Value:</strong> Demonstrates a practical implementation of cryptographic principles, useful for learning purposes.</li>
+            </ul>
+      </section>
+      <section class="encryption-section">
+        <h2>Encryption</h2>
+        <div class="form-group">
+          <label for="inputText">Text to Encrypt</label>
+          <textarea id="inputText" placeholder="Enter your text here"></textarea>
+          <button class="clear-button" id="clearInputText">Clear</button>
+        </div>
+        <div class="form-group">
+          <label for="password">Password (min 8 chars)</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+        </div>
+        <div class="button-group">
+          <button onclick="encrypt()">Encrypt</button>
+        </div>
+        <p class="info-text">
+          After encryption, a shareable link will be generated below, for decryption use the password.
+        </p>
+        <div class="form-group url-group">
+          <label for="encryptedURL">Encrypted URL</label>
+          <div class="url-input">
+            <input type="text" id="encryptedURL" readonly placeholder="Encrypted URL will appear here" />
+            <button class="copy-button" id="copyURL">Copy</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="decryption-section">
+        <h2>Decryption</h2>
+        <div class="form-group">
+          <label for="decryptPassword">Password to Decrypt</label>
+          <input type="password" id="decryptPassword" placeholder="Enter password to decrypt" />
+        </div>
+        <div class="button-group">
+          <button onclick="decrypt()">Decrypt</button>
+        </div>
+        <div class="form-group">
+          <label for="decryptedText">Decrypted Text</label>
+          <textarea id="decryptedText" readonly placeholder="Decrypted text will appear here"></textarea>
+          <button class="clear-button" id="clearDecryptedText">Clear</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>
+        A web application providing secure client-side text encryption and decryption via shareable URLs, developed by Dhrrishit Deka.
+        The app encrypts the text using AES with a PBKDF2-derived key and a unique salt. This process generates a
+        URL containing the encrypted message, which can be shared for decryption using the same password. The strength
+        of this tool lies in its client-side processing, ensuring that your text is encrypted before it ever leaves your
+        browser.
+      </p>
+    </footer>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="script.js"></script>
 </body>
