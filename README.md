@@ -1,14 +1,14 @@
 # ProjectCodeX-A
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Last Commit](https://img.shields.io/github/last-commit/YourUsername/ProjectCodeX-A)](https://github.com/YourUsername/ProjectCodeX-A/commits/main)
-[![GitHub Stars](https://img.shields.io/github/stars/YourUsername/ProjectCodeX-A?style=social)](https://github.com/YourUsername/ProjectCodeX-A)
+[![Last Commit](https://img.shields.io/github/last-commit/dhrrishh7r5/ProjectCodeX-A)](https://github.com/YourUsername/ProjectCodeX-A/commits/main)
+[![GitHub Stars](https://img.shields.io/github/stars/dhrrishh7r5/ProjectCodeX-A?style=social)](https://github.com/YourUsername/ProjectCodeX-A)
 
 A web application providing secure client-side text encryption and decryption via shareable URLs.  Encrypt your sensitive information directly in your browser and share it securely!
 
 ## Demo
 
-[https://your-project-demo-url.com](https://your-project-demo-url.com)  *(Replace with your actual demo link)*
+[https://your-project-demo-url.com]([https://your-project-demo-url.com](https://projectcodexa-craftedcodex.vercel.app/)) 
 
 ## Table of Contents
 
