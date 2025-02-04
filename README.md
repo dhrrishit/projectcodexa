@@ -8,7 +8,7 @@ A web application providing secure client-side text encryption and decryption vi
 
 ## Demo
 
-[https://your-project-demo-url.com]([https://your-project-demo-url.com](https://projectcodexa-craftedcodex.vercel.app/)) 
+https://projectcodexa-craftedcodex.vercel.app/
 
 ## Table of Contents
 
