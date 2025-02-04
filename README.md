@@ -111,7 +111,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *   [CryptoJS](https://cdnjs.com/libraries/crypto-js): For providing the cryptographic functions.
 *   [zxcvbn](https://github.com/dropbox/zxcvbn): For password strength estimation.
-*   [is.gd](https://is.gd/): For the URL shortening service.
+
 
 ---
 
