@@ -1,8 +1,6 @@
 # ProjectCodeX-A
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Last Commit](https://img.shields.io/github/last-commit/dhrrishh7r5/ProjectCodeX-A)](https://github.com/YourUsername/ProjectCodeX-A/commits/main)
-[![GitHub Stars](https://img.shields.io/github/stars/dhrrishh7r5/ProjectCodeX-A?style=social)](https://github.com/YourUsername/ProjectCodeX-A)
 
 A web application providing secure client-side text encryption and decryption via shareable URLs.  Encrypt your sensitive information directly in your browser and share it securely!
 
@@ -60,8 +58,8 @@ This project is designed to run directly in a web browser.  No server-side insta
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/YourUsername/ProjectCodeX-A.git
-    cd ProjectCodeX-A
+    git clone https://github.com/dhrrishh7r5/projectcodexa.git
+    cd projectcodexa
     ```
 
 2.  **Open `index.html` in your browser.**
