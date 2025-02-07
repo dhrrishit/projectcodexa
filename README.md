@@ -115,4 +115,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Developed by DHRRISHIT DEKA.
+Developed by DHRRISHIT DEKA
