@@ -4,7 +4,7 @@
 
 A web application providing secure client-side text encryption and decryption via shareable URLs.  Encrypt your sensitive information directly in your browser and share it securely!
 
-## Demo
+## 
 
 https://projectcodexa-craftedcodex.vercel.app/
 
