@@ -8,6 +8,8 @@ A web application providing secure client-side text encryption and decryption vi
 
 https://projectcodexa-craftedcodex.vercel.app/
 
+##
+
 ## Table of Contents
 
 *   [Features](#features)
