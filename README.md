@@ -109,12 +109,17 @@ Please adhere to the existing code style and conventions.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Author
+**Dhrrishit Deka**
+- **Email**: dhrrishit@gmail.com
+- **GitHub**: https://github.com/dhrrishit
+- **LinkedIn**: https://www.linkedin.com/in/dhrrishitdeka/
+- **X (Twitter)**: https://x.com/dhrrishitdeka
+  
 ## Acknowledgments
 
 *   [CryptoJS](https://cdnjs.com/libraries/crypto-js): For providing the cryptographic functions.
 *   [zxcvbn](https://github.com/dropbox/zxcvbn): For password strength estimation.
 
 
----
 
-Developed by DHRRISHIT DEKA
