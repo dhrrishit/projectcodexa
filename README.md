@@ -96,12 +96,14 @@ This project is designed to run directly in a web browser.  No server-side insta
 
 ## Contributing
 
-Contributions are welcome!  If you have ideas for improvements, bug fixes, or new features, please follow these steps:
+Contributions are welcome!  Here's how you can contribute:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with clear, descriptive messages.
-4.  Submit a pull request to the `main` branch.
+3.  Make your changes.
+4.  Test your changes thoroughly.
+5.  Submit a pull request.
+
 
 Please adhere to the existing code style and conventions.
 
