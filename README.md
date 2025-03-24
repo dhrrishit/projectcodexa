@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A web application providing secure client-side text encryption and decryption via shareable URLs.  Encrypt your sensitive information directly in your browser and share it securely!
+A powerful web application providing secure client-side text encryption and decryption via shareable URLs. Encrypt your sensitive information directly in your browser and share it securely with advanced features like two-factor authentication, multiple encryption algorithms, and password generation.
 
 ## 
 
@@ -25,24 +25,27 @@ https://projectcodexa-craftedcodex.vercel.app/
 
 ## Features
 
-*   **Client-Side Encryption:** Text is encrypted in the user's browser, ensuring that sensitive data never leaves the client unprotected.
-*   **AES Encryption:** Utilizes the robust Advanced Encryption Standard for high-security text protection.
-*   **Password-Based Key Derivation Function (PBKDF2):** Derives a strong and complex key for encryption using user-provided passwords.
-*   **Unique Salt for Each Encryption:** Enhances security by making attacks like rainbow tables ineffective.
-*   **Shareable Encrypted URL:** Generates a link containing the encrypted message for easy sharing.
-*   **URL Expiration:** Allows for URLs to expire after a set number of days to further secure the message.
-*   **Downloadable Text:**  Decrypt the text and download it as a file for easy access.
-*   **Password-Protected Decryption:** Ensures that only users with the correct password can decrypt the text.
-*   **Shortened URLs:** Uses is.gd to create a shorter and more easily shareable encrypted URL.
+* **Client-Side Encryption:** Text is encrypted in your browser, ensuring sensitive data never leaves your device unprotected.
+* **Multiple Encryption Algorithms:** Choose between AES-256, RSA-2048, or Multi-Pass encryption for different security needs.
+* **Secure Key Derivation:** Uses PBKDF2 with a robust iteration count to derive strong encryption keys from your passwords.
+* **Password Strength Indicator:** Real-time feedback on password strength to help you create secure, uncrackable passwords.
+* **Two-Factor Authentication:** Add an extra layer of security with TOTP-based two-factor authentication.
+* **Automatic Password Generation:** Generate strong, customizable passwords with various character types and lengths.
+* **URL Expiration:** Set URLs to expire after a specified number of days for enhanced security.
+* **URL Shortening:** Long encrypted URLs are automatically shortened for easier sharing.
+* **Downloadable Text:** Download decrypted text directly as a file for offline access.
+* **Visual Feedback:** Clear indicators for copy, password visibility, success/error messages with intuitive UI elements.
+* **Matrix Background:** Dynamic, performance-optimized matrix code animation in the background.
 
 ## Why ProjectCodeX-A?
 
-*   **High Security:** Data encryption is performed entirely in the user's browser, mitigating the risk of interception.
-*   **Ease of Use:** A simple and intuitive user interface with clear labels and buttons.
-*   **No Server Dependency:** Since encryption is client-side, no sensitive data is stored or processed on external servers.
-*   **Portable Encryption:** The encrypted URL can be easily shared without requiring additional files or software.
-*   **Customizable Design:** A sleek, responsive design using modern CSS practices ensures usability across devices.
-*   **Educational Value:** Demonstrates a practical implementation of cryptographic principles, useful for learning purposes.
+* **Complete Privacy:** All encryption and decryption happens in your browser - your data is never sent to any server.
+* **Modern Interface:** Clean, responsive design with intuitive controls and visual feedback.
+* **Enhanced Security:** Multiple encryption options, password strength indicators, and two-factor authentication provide robust protection.
+* **Visual Feedback:** Clear indicators for every action - copy, password strength, success/error messages.
+* **No Dependencies:** Works completely offline after initial page load - no server connections required.
+* **Performance Optimized:** Background animations and visual effects are optimized for smooth performance on all devices.
+* **Accessibility:** Designed with usability in mind, with clear visual feedback and intuitive controls.
 
 ## Getting Started
 
@@ -55,7 +58,7 @@ Instructions on setting up the project locally.
 
 ### Installation
 
-This project is designed to run directly in a web browser.  No server-side installation is required. Simply download the files and open the `index.html` file in your browser, or host the files on a web server.
+This project is designed to run directly in a web browser. No server-side installation is required. Simply download the files and open the `index.html` file in your browser, or host the files on a web server.
 
 1.  **Clone the repository:**
 
@@ -69,41 +72,54 @@ This project is designed to run directly in a web browser.  No server-side insta
 ## Usage
 
 1.  **Encryption:**
+    *   Select your preferred encryption algorithm (AES-256, RSA-2048, or Multi-Pass).
     *   Enter the text you want to encrypt in the "Text to Encrypt" textarea.
     *   Set the desired expiration days for the encrypted URL.
-    *   Enter a strong password (minimum 8 characters) in the "Password" field and confirm it.
+    *   Enter a strong password or use the "Generate" button to create a secure password.
+    *   Optionally enable Two-Factor Authentication for additional security.
     *   Click the "Encrypt" button.
-    *   The encrypted URL will be generated and displayed in the "Encrypted URL" field.  You can copy this URL.
+    *   The encrypted URL will be generated and displayed in the "Encrypted URL" field. Copy it using the copy button.
 
 2.  **Decryption:**
-    *   Paste the encrypted URL into your browser's address bar.
+    *   Navigate to the application URL with the encrypted hash or paste the shortened URL.
     *   Enter the correct password in the "Password to Decrypt" field.
     *   Click the "Decrypt" button.
     *   The decrypted text will appear in the "Decrypted Text" textarea.
 
-3.  **Downloading Decrypted Text:**
+3.  **Password Generation:**
+    *   Click the "Generate" button next to the password field.
+    *   Customize your password requirements (uppercase, lowercase, numbers, special characters, and length).
+    *   A strong, random password will be generated and automatically filled in.
+
+4.  **Two-Factor Authentication:**
+    *   Check the "Enable Two-Factor Authentication" box.
+    *   Scan the displayed QR code with an authenticator app (like Google Authenticator, Authy, etc.).
+    *   Enter the 6-digit code from your authenticator app when encrypting.
+
+5.  **Downloading Decrypted Text:**
     *   After decrypting the text, click the "Download" button to save the text to a file.
 
 ## Security
 
-*   **Client-Side Encryption:** All encryption and decryption operations are performed locally in the user's browser.  No sensitive data is sent to any server.
-*   **AES with PBKDF2:**  The application uses the Advanced Encryption Standard (AES) with a key derived from the user-provided password using the Password-Based Key Derivation Function 2 (PBKDF2).  This strengthens the encryption process.
-*   **Unique Salt:** A unique salt is generated for each encryption, protecting against rainbow table attacks.
-*   **Password Strength Meter:**  A password strength meter is included to encourage users to create strong passwords.
-*   **URL Expiration:**  The option to set an expiration date for the generated URL adds an extra layer of security.
+*   **Client-Side Encryption:** All encryption and decryption operations are performed locally in your browser. No sensitive data is sent to any server.
+*   **Multiple Encryption Algorithms:** Choose from AES-256, RSA-2048, or Multi-Pass encryption based on your security requirements.
+*   **Key Derivation:** Uses PBKDF2 with 10,000 iterations to derive encryption keys from passwords, making brute-force attacks impractical.
+*   **Two-Factor Authentication:** Optional TOTP-based 2FA for an additional layer of security.
+*   **Random Password Generation:** Create cryptographically strong passwords using the browser's secure random number generator.
+*   **Visual Password Strength Meter:** Real-time feedback on password strength encourages better security practices.
+*   **URL Expiration:** Set an expiration date for shared URLs to limit their validity period.
 
-**Important Note:** While ProjectCodeX-A provides a secure way to encrypt and share text, the security of the system relies heavily on the strength of the password chosen by the user.  **Always use a strong, unique password.**
+**Important Note:** While ProjectCodeX-A provides robust encryption, the security of your data relies heavily on protecting your password and (if enabled) your two-factor authentication device. Always use a strong, unique password and keep your 2FA device secure.
 
 ## Contributing
 
-Contributions are welcome!  Here's how you can contribute:
+Contributions are welcome! Here's how you can contribute:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
 3.  Make your changes.
 4.  Test your changes thoroughly.
 5.  Submit a pull request.
-
 
 Please adhere to the existing code style and conventions.
 
@@ -123,6 +139,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *   [CryptoJS](https://cdnjs.com/libraries/crypto-js): For providing the cryptographic functions.
 *   [zxcvbn](https://github.com/dropbox/zxcvbn): For password strength estimation.
+*   [QRCode.js](https://github.com/davidshimjs/qrcodejs): For QR code generation for two-factor authentication.
+*   [jsOTP](https://github.com/jiangts/jsOTP): For TOTP generation in the browser.
+*   [Font Awesome](https://fontawesome.com/): For the UI icons.
 
 
 

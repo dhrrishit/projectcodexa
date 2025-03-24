@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://is.gd;">
     <title>CraftedCodeX | ProjectCodeX-A</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.min.css" />
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,61 +26,39 @@
             <section class="features-section">
                 <h2>FEATURES</h2>
                 <ul>
-                    <li><strong>Client-Side Encryption:</strong> Text is encrypted in the user's browser, ensuring that
-                        sensitive data
-                        never leaves the client unprotected.</li>
-                    <li><strong>AES Encryption:</strong> Utilizes the robust Advanced Encryption Standard for
-                        high-security
-                        text
-                        protection.</li>
-                    <li><strong>Password-Based Key Derivation Function (PBKDF2):</strong> Derives a strong and complex
-                        key
-                        for
-                        encryption using user-provided passwords.</li>
-                    <li><strong>Unique Salt for Each Encryption:</strong> Enhances security by making attacks like
-                        rainbow
-                        tables
-                        ineffective.</li>
-                    <li><strong>Shareable Encrypted URL:</strong> Generates a link containing the encrypted message for
-                        easy sharing.
-                    </li>
-                    <li><strong>URL Expiration:</strong> Allows for URLs to expire after a set number of days to further
-                        secure the message.
-                    </li>
-                    <li><strong>Downloadable Text:</strong> Allows for text to be downloaded as a file for easy access.
-                    </li>
-                    <li><strong>Password-Protected Decryption:</strong> Ensures that only users with the correct
-                        password
-                        can decrypt
-                        the text.</li>
+                    <li><strong>Client-Side Encryption:</strong> Text is encrypted in your browser, ensuring sensitive data never leaves your device unprotected.</li>
+                    <li><strong>Multiple Encryption Algorithms:</strong> Choose between AES-256, RSA-2048, or Multi-Pass encryption for different security needs.</li>
+                    <li><strong>Secure Key Derivation:</strong> Uses PBKDF2 with a robust iteration count to derive strong encryption keys from your passwords.</li>
+                    <li><strong>Password Strength Indicator:</strong> Real-time feedback on password strength to help you create secure, uncrackable passwords.</li>
+                    <li><strong>Two-Factor Authentication:</strong> Add an extra layer of security with TOTP-based two-factor authentication.</li>
+                    <li><strong>Automatic Password Generation:</strong> Generate strong, customizable passwords with various character types and lengths.</li>
+                    <li><strong>URL Expiration:</strong> Set URLs to expire after a specified number of days for enhanced security.</li>
+                    <li><strong>URL Shortening:</strong> Long encrypted URLs are automatically shortened for easier sharing.</li>
+                    <li><strong>Downloadable Text:</strong> Download decrypted text directly as a file for offline access.</li>
                 </ul>
             </section>
             <section class="pros-section">
                 <h2>WHY?</h2>
                 <ul>
-                    <li><strong>High Security:</strong> Data encryption is performed entirely in the user's browser,
-                        mitigating the
-                        risk of interception.</li>
-                    <li><strong>Ease of Use:</strong> A simple and intuitive user interface with clear labels and
-                        buttons.
-                    </li>
-                    <li><strong>No Server Dependency:</strong> Since encryption is client-side, no sensitive data is
-                        stored or
-                        processed on external servers.</li>
-                    <li><strong>Portable Encryption:</strong> The encrypted URL can be easily shared without requiring
-                        additional
-                        files or software.</li>
-                    <li><strong>Customizable Design:</strong> A sleek, responsive design using modern CSS practices
-                        ensures
-                        usability
-                        across devices.</li>
-                    <li><strong>Educational Value:</strong> Demonstrates a practical implementation of cryptographic
-                        principles, useful
-                        for learning purposes.</li>
+                    <li><strong>Complete Privacy:</strong> All encryption and decryption happens in your browser - your data is never sent to any server.</li>
+                    <li><strong>Modern Interface:</strong> Clean, responsive design with intuitive controls and visual feedback.</li>
+                    <li><strong>Enhanced Security:</strong> Multiple encryption options, password strength indicators, and two-factor authentication provide robust protection.</li>
+                    <li><strong>Visual Feedback:</strong> Clear indicators for every action - copy, password strength, success/error messages.</li>
+                    <li><strong>No Dependencies:</strong> Works completely offline after initial page load - no server connections required.</li>
+                    <li><strong>Performance Optimized:</strong> Background animations and visual effects are optimized for smooth performance on all devices.</li>
+                    <li><strong>Accessibility:</strong> Designed with usability in mind, with clear visual feedback and intuitive controls.</li>
                 </ul>
             </section>
             <section class="encryption-section">
                 <h2>ENCRYPTION</h2>
+                <div class="form-group">
+                    <label for="encryptionAlgorithm">Encryption Algorithm</label>
+                    <select id="encryptionAlgorithm">
+                        <option value="aes">AES-256</option>
+                        <option value="rsa">RSA-2048</option>
+                        <option value="multi">Multiple Pass (AES + RSA)</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="inputText">Text to Encrypt</label>
                     <textarea id="inputText" placeholder="Enter the text you want to encrypt."></textarea>
@@ -89,13 +69,61 @@
                     <input type="number" id="expirationDays" value="7" min="1" />
                 </div>
                 <div class="form-group">
+                    <label for="useShortUrl">
+                        <input type="checkbox" id="useShortUrl"> Use URL Shortening Service
+                    </label>
+                    <p id="shortUrlWarning" style="display: none; color: #ff9800; font-size: 0.8rem; margin-top: 0.25rem;">
+                        Note: URL shortening services may pose security risks as they involve a third-party. 
+                        For maximum security, consider using the full URL instead.
+                    </p>
+                </div>
+                <div class="form-group">
                     <label for="password">Password (min 8 chars)</label>
-                    <input type="password" id="password" placeholder="Enter a strong password" />
-                    <div id="password-strength"></div>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Enter a strong password" />
+                        <button id="generatePassword" class="generate-button"><span>Generate</span></button>
+                        <button class="toggle-password" data-target="password"><i class="fas fa-eye"></i></button>
+                        <button class="copy-password" data-target="password"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div id="password-strength" class="strength-indicator"></div>
+                    <div class="password-options" id="passwordOptions" style="display: none;">
+                        <div class="option">
+                            <label><input type="checkbox" id="useUppercase" checked> Uppercase</label>
+                        </div>
+                        <div class="option">
+                            <label><input type="checkbox" id="useLowercase" checked> Lowercase</label>
+                        </div>
+                        <div class="option">
+                            <label><input type="checkbox" id="useNumbers" checked> Numbers</label>
+                        </div>
+                        <div class="option">
+                            <label><input type="checkbox" id="useSpecial" checked> Special Characters</label>
+                        </div>
+                        <div class="option">
+                            <label>Length: <input type="number" id="passwordLength" value="16" min="8" max="64"></label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+                        <button class="toggle-password" data-target="confirmPassword"><i class="fas fa-eye"></i></button>
+                        <button class="copy-password" data-target="confirmPassword"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="twoFactorAuth">
+                        <input type="checkbox" id="twoFactorAuth"> Enable Two-Factor Authentication
+                    </label>
+                    <div id="twoFactorSetup" style="display: none;" class="two-factor-container">
+                        <div id="qrCode" class="qr-code"></div>
+                        <p class="two-factor-info">Scan this QR code with your authenticator app</p>
+                        <div class="form-group">
+                            <label for="totpCode">Enter 2FA Code</label>
+                            <input type="text" id="totpCode" placeholder="Enter 6-digit code" maxlength="6" />
+                        </div>
+                    </div>
                 </div>
                 <div class="button-group">
                     <button onclick="handleEncrypt()">Encrypt</button>
@@ -120,7 +148,11 @@
                 <h2>DECRYPTION</h2>
                 <div class="form-group">
                     <label for="decryptPassword">Password to Decrypt</label>
-                    <input type="password" id="decryptPassword" placeholder="Enter password to decrypt" />
+                    <div class="password-container">
+                        <input type="password" id="decryptPassword" placeholder="Enter password to decrypt" />
+                        <button class="toggle-password" data-target="decryptPassword"><i class="fas fa-eye"></i></button>
+                        <button class="copy-password" data-target="decryptPassword"><i class="fas fa-copy"></i></button>
+                    </div>
                 </div>
                 <div class="button-group">
                     <button onclick="handleDecrypt()">Decrypt</button>
@@ -140,7 +172,7 @@
 
         <footer>
             <p>
-                CraftedCodeX presents a secure client-side text encryption and decryption tool that ensures complete
+                <a href="https://craftedcodex.vercel.app/">CraftedCodeX</a> presents a secure client-side text encryption and decryption tool that ensures complete
                 privacy through AES encryption with a PBKDF2-derived key and a unique salt. This application encrypts
                 text directly in your browser before it ever leaves your device, generating a secure shareable URL
                 containing the encrypted message. The recipient can decrypt it using the same password, ensuring
@@ -150,10 +182,10 @@
             </p>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha512-TZlMGFY9xKj38t/5m2FzJ+RM/aD5alMHDe26p0mYUMoCF5G7ibfHUQILq0qQPV3wlsnCwL+TPRNK4vIWGLOkUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsOTP/2.0.0/jsOTP.min.js" integrity="sha512-IPODISAYnrRfVkbvu9/ws/2MpS1Ua0GK/3Xwu7kt7u/dmKmQsGi0tMXLm/3Rd0MaJCzpKvqEYCFDnFbGc0N2zA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
-    <script src="matrix.js"></script>
 </body>
-
 </html>
